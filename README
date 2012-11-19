@@ -6,3 +6,5 @@ sbt run
 To run from a fat jar:
 sbt assembly
 java -jar target/lift-jetty-fatjar-assembly-0.1-SNAPSHOT.jar
+
+In either case, the Lift app will then be available at http://localhost:8080.
