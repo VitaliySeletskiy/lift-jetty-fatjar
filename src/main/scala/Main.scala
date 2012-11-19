@@ -10,10 +10,13 @@ object Main {
     scc.setPort(8080)
     server.setConnectors(Array(scc))
 
+    val domain = this.getClass.getProtectionDomain
+    val location = domain.getCodeSource.getLocation
+
     val context = new WebAppContext()
     context.setServer(server)
     context.setContextPath("/")
-    context.setWar("src/main/webapp")
+    context.setWar(location.toExternalForm)
 
     server.addHandler(context)
 
